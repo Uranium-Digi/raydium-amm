@@ -2394,8 +2394,7 @@ impl Processor {
             .checked_mul(amm.fees.swap_fee_numerator.into())
             .unwrap()
             .checked_ceil_div(amm.fees.swap_fee_denominator.into())
-            .unwrap()
-            .0;
+            .unwrap();
         let swap_in_after_deduct_fee = U128::from(swap.amount_in).checked_sub(swap_fee).unwrap();
         let swap_amount_out = Calculator::swap_token_amount_base_in(
             swap_in_after_deduct_fee,
@@ -2811,7 +2810,6 @@ impl Processor {
                 .into(),
             )
             .unwrap()
-            .0
             .as_u64();
         let swap_fee = swap_in_after_add_fee
             .checked_sub(swap_in_before_add_fee.as_u64())
@@ -3662,8 +3660,7 @@ impl Processor {
                 .checked_mul(amm.fees.swap_fee_numerator.into())
                 .unwrap()
                 .checked_ceil_div(amm.fees.swap_fee_denominator.into())
-                .unwrap()
-                .0;
+                .unwrap();
             let swap_in_after_deduct_fee =
                 U128::from(swap.amount_in).checked_sub(swap_fee).unwrap();
             let swap_amount_out = Calculator::swap_token_amount_base_in(
@@ -3901,7 +3898,6 @@ impl Processor {
                     .into(),
                 )
                 .unwrap()
-                .0
                 .as_u64();
             swap_base_out.max_amount_in = swap_in_after_add_fee;
 
@@ -4447,7 +4443,6 @@ impl Processor {
                     .unwrap()
                     .checked_ceil_div(amm.fees.trade_fee_denominator.into())
                     .unwrap()
-                    .0
                     .as_u64();
 
                 //let grid: u64 = cur_price * (amm.depth as u64) / (100) / (amm.order_num as u64); // percent: e.g., 5*10**6 is 5%
@@ -6705,8 +6700,7 @@ mod test {
             .checked_mul(amm.fees.swap_fee_numerator.into())
             .unwrap()
             .checked_ceil_div(amm.fees.swap_fee_denominator.into())
-            .unwrap()
-            .0;
+            .unwrap();
 
         let swap_in_after_deduct_fee = U128::from(amount_in).checked_sub(swap_fee).unwrap();
         let swap_amount_out = Calculator::swap_token_amount_base_in(
