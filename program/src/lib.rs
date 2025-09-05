@@ -26,7 +26,9 @@ solana_security_txt::security_txt! {
     auditors: "https://github.com/raydium-io/raydium-docs/blob/master/audit/MadSheild%20Q2%202023/Raydium%20updated%20orderbook%20AMM%20program%20%26%20OpenBook%20migration.pdf"
 }
 
-#[cfg(feature = "devnet")]
-solana_program::declare_id!("DRaya7Kj3aMWQSy19kSjvmuwq9docCHofyP9kanQGaav");
-#[cfg(not(feature = "devnet"))]
-solana_program::declare_id!("675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8");
+// #[cfg(feature = "mainnet")]
+// solana_program::declare_id!("2Eb6JxPEizUJraUKCDuYxHQN7t2exHVdc8ec5apYNFmG");
+// #[cfg(feature = "devnet")]
+// solana_program::declare_id!("2Eb6JxPEizUJraUKCDuYxHQN7t2exHVdc8ec5apYNFmG");
+// #[cfg(feature = "localnet")]
+solana_program::declare_id!("ESzFnFJt9gvE24HZSccA9js6L1NAUgvQLJexKxrmTXgC");
